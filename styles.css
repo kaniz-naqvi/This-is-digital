@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body{
+    height: 100%;
+    width: 100%;
+    font-family:"Noto Serif", serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+nav{
+    padding: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0px;
+    height: 40px;
+}
+.nav-part1 h1{
+    font-weight: 550;
+    font-family: "Inria Serif", serif;
+    font-size:25px;
+    letter-spacing: 0.5px;
+}
+.nav-part2{
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    font-family: sans-serif;
+}
+.nav-part2 a{
+    text-decoration: none;
+    color: inherit;
+    transition:all 0.2s ease-in-out;
+}
+.nav-part2 .nav-link:hover{
+    border-bottom:2px solid #00EB8F;
+    margin-top: 2px;
+}
+.arrow{
+    position: relative;
+    overflow: hidden;
+    padding:10px 30px;
+    border: 1px solid #dadada;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.arrow .green{
+    position: absolute;
+    top: 0%;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #00EB8F;
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+.arrow:hover .green{
+    left: 0%;
+}
+main{
+    height: calc(100% - 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    margin-top: 80px;
+    position: relative;
+}
+main>h1{
+    font-size: 4em;
+    font-weight: 400;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+main>h1::after{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 0.3em;
+    background-image:  url('https://thisisdigital.co.uk/dist/images/underline-green.svg');
+    bottom: 0;
+    left: 25%;
+}
+.main-p{
+    font-size: x-large;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.images img{
+    height: auto;
+    width: 260px;
+    position: absolute;
+    transition: margin 0.7s ease;
+}
+.images img:hover{
+    margin-top: -10px;
+}
+#img1{
+    top: 10%;
+    left: 7%;
+}
+#img2{
+    top: 8%;
+    right: 25%;
+    z-index: 2;
+}
+#img3{
+    top: 40%;
+    right: 8%;
+    z-index: 1;
+    width: 250px;
+}
+#arrow{
+    padding-top: 2px ;
+    padding-bottom: 2px;
+}
+@media (max-width:900px) {
+    #img2, #img3, .nav-part2{
+        display: none;
+    }
+    #img1{
+        position: static;
+        width: 100%;
+        height: min-content;
+    }
+    main{
+        height: auto;
+        margin-top: 150px;
+    }
+    main>h1{
+        font-size: 2.5em;
+    }
+}
